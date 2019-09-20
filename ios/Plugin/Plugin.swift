@@ -8,10 +8,12 @@ import Capacitor
 @objc(Concatenate)
 public class Concatenate: CAPPlugin {
     
-    @objc func echo(_ call: CAPPluginCall) {
-        let value = call.getString("value") ?? ""
-        call.success([
-            "value": value
-        ])
+    @objc func concat(_ call: CAPPluginCall) {
+        let left = call.getString("left") ?? ""
+        let right = call.getString("right") ?? ""
+        
+        var output = PluginResultData()
+        output["result"] = "\(left)\(right)"
+        call.success(output)
     }
 }
