@@ -13,7 +13,7 @@ public class Concatenate: CAPPlugin {
         let right = call.getString("right") ?? ""
         
         var output = PluginResultData()
-        output["result"] = "\(left)\(right)"
+        output["concatenatedString"] = "\(left)\(right)"
         call.success(output)
     }
 }
