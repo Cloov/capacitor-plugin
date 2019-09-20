@@ -9,9 +9,9 @@ export class ConcatenateWeb extends WebPlugin implements ConcatenatePlugin {
     });
   }
 
-  async echo(options: { value: string }): Promise<{value: string}> {
-    console.log('ECHO', options);
-    return options;
+  async concat(args: { left: string, right: string }): Promise<string> {
+    console.log("[Web] concat '" + args.left + "' and '" + args.right + "'");
+    return args.left + args.right;
   }
 }
 

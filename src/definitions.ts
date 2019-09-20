@@ -5,5 +5,5 @@ declare module "@capacitor/core" {
 }
 
 export interface ConcatenatePlugin {
-  echo(options: { value: string }): Promise<{value: string}>;
+  concat(args: { left: string, right: string }): Promise<string>;
 }
